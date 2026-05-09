@@ -1,0 +1,469 @@
+body {
+margin: 0;
+font-family: Arial;
+background: #0a192f;
+color: white;
+}
+
+/* NAVBAR FIX */
+nav {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 20px;
+}
+
+/* RIGHT SIDE LINKS */
+nav ul {
+display: flex;
+gap: 25px;
+list-style: none;
+margin-left: auto;
+}
+
+/* PROFESSIONAL LINK STYLE */
+nav ul li a {
+text-decoration: none;
+color: #ccd6f6;
+font-size: 16px;
+position: relative;
+transition: 0.3s ease;
+}
+
+/* UNDERLINE EFFECT */
+nav ul li a::after {
+content: "";
+position: absolute;
+width: 0%;
+height: 2px;
+left: 0;
+bottom: -5px;
+background: cyan;
+transition: 0.3s;
+}
+
+nav ul li a:hover::after {
+width: 100%;
+}
+
+nav ul li a:hover {
+color: cyan;
+}
+
+/* MENU BUTTON RIGHT FIX */
+.menu-toggle {
+display: none;
+font-size: 26px;
+cursor: pointer;
+margin-left: auto;
+}
+
+/* HERO */
+.hero {
+padding: 60px;
+}
+
+/* ABOUT GLASS */
+.glass {
+background: rgba(255,255,255,0.06);
+backdrop-filter: blur(10px);
+margin: 40px;
+padding: 30px;
+border-radius: 15px;
+}
+
+/* ABOUT LAYOUT FIX */
+.about-container {
+display: flex;
+justify-content: space-between;
+align-items: center;
+gap: 30px;
+}
+
+.about-text {
+flex: 2;
+}
+
+.about-img {
+flex: 1;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.about-img img {
+width: 180px;
+height: 180px;
+border-radius: 50%;
+object-fit: cover;
+}
+
+/* PROJECTS */
+.projects {
+padding: 50px;
+}
+
+.project-container {
+display: flex;
+gap: 20px;
+flex-wrap: wrap;
+justify-content: center;
+}
+
+.project-card {
+background: #112240;
+padding: 20px;
+border-radius: 10px;
+width: 280px;
+transition: 0.3s ease;
+}
+
+.project-card img {
+width: 100%;
+border-radius: 10px;
+}
+
+.project-card:hover {
+transform: translateY(-10px);
+box-shadow: 0 10px 30px rgba(0, 255, 255, 0.2);
+}
+
+.project-links {
+display: flex;
+justify-content: space-between;
+margin-top: 10px;
+}
+
+/* CONTACT */
+.contact {
+text-align: center;
+padding: 50px;
+}
+
+.btn {
+padding: 10px 20px;
+background: cyan;
+color: black;
+border-radius: 5px;
+text-decoration: none;
+transition: 0.3s;
+}
+
+.btn:hover {
+box-shadow: 0 0 15px cyan;
+transform: scale(1.05);
+}
+
+/* SOCIAL */
+.social a {
+display: block;
+margin: 10px 0;
+font-size: 20px;
+color: white;
+transition: 0.3s;
+}
+
+.social a:hover {
+color: cyan;
+transform: scale(1.2);
+}
+
+/* ABOUT IMAGE HOVER */
+.about-img img {
+transition: 0.3s ease;
+}
+
+.about-img img:hover {
+transform: scale(1.05);
+box-shadow: 0 0 20px rgba(0,255,255,0.3);
+}
+
+/* SMOOTH SCROLL */
+html {
+scroll-behavior: smooth;
+}
+
+/* PARTICLES BACKGROUND */
+#particles-js {
+position: fixed;
+width: 100%;
+height: 100%;
+z-index: -1;
+top: 0;
+left: 0;
+}
+
+/* ensure content above */
+body {
+position: relative;
+z-index: 1;
+}
+
+/* WAVE BACKGROUND */
+.waves {
+position: fixed;
+bottom: 0;
+width: 100%;
+z-index: -1;
+overflow: hidden;
+}
+
+.waves svg {
+width: 200%;
+animation: waveMove 10s linear infinite;
+}
+
+@keyframes waveMove {
+0% { transform: translateX(0); }
+100% { transform: translateX(-50%); }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+
+nav {
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+}
+
+.menu-toggle {
+display: block;
+}
+
+nav ul {
+position: absolute;
+top: 70px;
+right: 0;
+width: 200px;
+flex-direction: column;
+background: #0a192f;
+padding: 20px;
+display: none;
+}
+
+nav ul.active {
+display: flex;
+}
+
+.hero {
+padding: 30px 20px;
+text-align: center;
+}
+
+.about-container {
+flex-direction: column;
+text-align: center;
+}
+
+.about-img img {
+width: 140px;
+height: 140px;
+}
+
+.project-container {
+flex-direction: column;
+align-items: center;
+}
+
+.project-card {
+width: 90%;
+}
+
+.contact {
+padding: 30px 20px;
+}
+}
+
+/* ================= PREMIUM NAVBAR ================= */
+
+/* links base */
+nav ul li a {
+    position: relative;
+    padding: 5px 0;
+}
+
+/* active link */
+nav ul li a.active {
+    color: cyan;
+}
+
+/* glow underline (tracking line) */
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -6px;
+    width: 0%;
+    height: 2px;
+    background: cyan;
+    transition: 0.3s ease;
+    transform: translateX(-50%);
+    box-shadow: 0 0 10px cyan;
+}
+
+/* hover effect */
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* active underline */
+nav ul li a.active::after {
+    width: 100%;
+}
+
+/* slight glow on hover */
+nav ul li a:hover {
+    color: cyan;
+    text-shadow: 0 0 8px rgba(0,255,255,0.6);
+}
+
+/* PROJECT INFO STRUCTURE */
+.project-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* TECH TAGS */
+.tech {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.tech span {
+    background: rgba(0,255,255,0.1);
+    color: cyan;
+    padding: 4px 8px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+/* ICON ONLY LINKS */
+.project-links a {
+    font-size: 18px;
+    color: white;
+    transition: 0.3s;
+}
+
+.project-links a:hover {
+    color: cyan;
+    transform: scale(1.2);
+}
+
+/* Professional Glassy Button Style */
+
+button,
+.demo-btn,
+.btn {
+    padding: 12px 28px;
+    border: none;
+    outline: none;
+    border-radius: 12px;
+    cursor: pointer;
+
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.25),
+        inset 0 1px 1px rgba(255, 255, 255, 0.1);
+
+    transition: all 0.3s ease;
+}
+
+/* Hover Effect */
+button:hover,
+.demo-btn:hover,
+.btn:hover {
+    transform: translateY(-3px) scale(1.03);
+
+    background: rgba(255, 255, 255, 0.14);
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.35),
+        0 0 18px rgba(100, 255, 218, 0.35);
+}
+
+/* Click Effect */
+button:active,
+.demo-btn:active,
+.btn:active {
+    transform: scale(0.97);
+}
+
+/* Optional Shine Effect */
+button::before,
+.demo-btn::before,
+.btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.25),
+        transparent
+    );
+
+    transition: 0.6s;
+}
+
+button:hover::before,
+.demo-btn:hover::before,
+.btn:hover::before {
+    left: 100%;
+}
+
+/* Important */
+button,
+.demo-btn,
+.btn {
+    position: relative;
+    overflow: hidden;
+}
+
+#certifications {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.cert-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.cert-btn {
+    padding: 12px 25px;
+    background-color: #b3bdc937; /* Aapka theme color */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: transform 0.3s, background-color 0.3s;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+}
+
+.cert-btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px); /* Hover effect */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
